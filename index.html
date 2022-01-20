@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watch</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+    <style>
+      body {
+       background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url("bridge.jpg");
+       background-size: cover;
+        padding: 0;
+        margin: 0;
+        color: white;
+      }
+      .abcd {
+        /* background-color: aqua; */
+        margin-top: 10rem;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        /* margin-top: 5rem; */
+      }
+      #minute,
+      #hour,
+      #second {
+        border: 1px solid rgb(236, 231, 231);
+       
+        padding: 1rem;
+        margin: 10px;
+        width: 10rem;
+        text-align: center;
+      }
+      .wrapper p {
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 abcd">
+          <div class="wrapper">
+            <div id="hour">
+              <p id="a">00</p>
+            </div>
+            <div id="minute">
+              <p id="b">:00</p>
+            </div>
+            <div id="second">
+              <p id="c">:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    setInterval(myfunction, 1000);
+    function myfunction() {
+      var date = new Date();
+      var hour=document.getElementById("a");
+      var minute=document.getElementById("b");
+      var second=document.getElementById("c");
+      htime = date.getHours();
+      mtime = date.getMinutes();
+      stime =date.getSeconds();
+      hour.innerHTML=htime
+      minute.innerHTML=":"+mtime
+      second.innerHTML=":"+stime
+
+    }
+  </script>
+</html>
